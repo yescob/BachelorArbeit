@@ -1,0 +1,28 @@
+plugins {
+  id "fish.payara.micro-gradle-plugin" version "1.0.4"
+}
+
+group = 'at.fhv.jfe7727.ba'
+version = '1.0-SNAPSHOT'
+
+description = "MicroProfile Starter example"
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+payaraMicro {
+    payaraVersion = '5.2022.2'
+    deployWar = true
+    useUberJar = true
+    daemon = false
+    commandLineOptions = [port: 8085, contextroot : '/']
+}
+
+dependencies {
+    providedCompile 'org.eclipse.microprofile:microprofile:4.0.1'
+     implementation 'io.vertx:vertx-auth-jwt:3.9.5'    
+}
+
+repositories {
+    mavenCentral()
+}

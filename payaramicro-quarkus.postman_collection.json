@@ -1,0 +1,596 @@
+{
+	"info": {
+		"_postman_id": "6ed70646-8717-4eca-85d7-c624312d4df4",
+		"name": "BachelorArbeit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16422196"
+	},
+	"item": [
+		{
+			"name": "Quarkus",
+			"item": [
+				{
+					"name": "Add Movie",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Titanic\",\r\n    \"personNames\" : [\r\n        {\r\n            \"firstName\" : \"Tom\",\r\n            \"lastName\" : \"Hanks\"\r\n        },\r\n                {\r\n            \"firstName\" : \"Charlize\",\r\n            \"lastName\" : \"Theron\"\r\n        },\r\n                {\r\n            \"firstName\" : \"Tom\",\r\n            \"lastName\" : \"Hardy\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movie",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/movie",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Persons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/person",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/person/Tom/Hanks",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"person",
+								"Tom",
+								"Hanks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/movie/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJKYWtvYiIsInVwbiI6Ikpha29iIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2NTAzMDUyOTgsImV4cCI6MTY1MDMwNTU5OCwianRpIjoiNGEwODc3MTItMDQ2MC00NWY5LWIxYjctNTdiZjFlNmI2OWI4In0.GTUuNk8v1Zconz02f8DsVq4ljFnutaEzep8RoRDzi-HEvQWrKCryZMOZPz2u7Wg5moE5cldDfz0IccN9BwOjiI4GLO_OUozyqZLQnaEHF2Kd6mGJ1ip0KvvC2KImum0XPa4FxAGz5Uh7gkQ7ugax4ikCpQ3ZCDafkfDBgKiqrws_WtjCEZNw-8D_GTFJoRij6w0scS_TNzWwcwuIKiFYnMtE4FrdyfFaedajc8LYtbVOrAL1kPRRhyuoW45KWMJbSKVLxvK0JlPfZH4pL0psS06FV1S_5yzVtWfrwsKK9PTaRSUfCrspwPVTJyEq3eOvc4fUq0uli4CTB-3kJ22vOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/movie/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie By Title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/movie/search?title=Titanic",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movie",
+								"search"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Titanic"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJKYWtvYiIsImF1ZCI6InRhcmdldFNlcnZpY2UiLCJqdGkiOiIzNDQ3N2JjNS0xMTFkLTQwYzgtOWY3MC03MmE2NzlhZDMwN2IiLCJleHAiOjE2NTU5MDc5NTQsImlhdCI6MTY1NTkwNzkyNCwic3ViIjoiSmFrb2IiLCJ1cG4iOiJKYWtvYiIsInByZWZlcnJlZF91c2VybmFtZSI6bnVsbCwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdfQ.AK8bHnzh6fls6_X2LNnxCvSjNDSK0H-7D4sq8XpacW4fHy9TfnpQ0sifE86Nf-ziJC09rH6LiF3HhM6KPB3-ZJEB5rtwHL61v3xE_RZHWYcjn3O52yEZvYXe7dZFfqEOpkmlGy5MVRZWueWZDeRlqhJfrUn_ILJfXmlo4OPYPW7dYXQhjigdkiIDgnYBgXt86-0ztMUYCEG7_i0M9dTaAg1pcjjPpRrXkCJ9_s1dQlUdiAWT3phLAvnyYwtN0A2RgccYwqBHUFJS-4MT-UlmrkVXG0M07NHQzJ1W34iSeeqf_3x5C1sloT1H_jWcldNkDsBD9MtR2q8k6WmlVeRfkw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/person",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retry Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/resiliance/retry",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"resiliance",
+								"retry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Timeout Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/resiliance/timeout",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"resiliance",
+								"timeout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Persons with Auth",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/auth/person",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"auth",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie with Auth",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/auth/movie/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"auth",
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payara Micro",
+			"item": [
+				{
+					"name": "Add Movie",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Titanic\",\r\n    \"personNames\" : [\r\n        {\r\n            \"firstName\" : \"Tom\",\r\n            \"lastName\" : \"Hanks\"\r\n        },\r\n                {\r\n            \"firstName\" : \"Charlize\",\r\n            \"lastName\" : \"Theron\"\r\n        },\r\n                {\r\n            \"firstName\" : \"Tom\",\r\n            \"lastName\" : \"Hardy\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/movie",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/movie",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Persons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/person",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/person/Tom/Hanks",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"person",
+								"Tom",
+								"Hanks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/movie/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJKYWtvYiIsInVwbiI6Ikpha29iIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2NTAzMDUyOTgsImV4cCI6MTY1MDMwNTU5OCwianRpIjoiNGEwODc3MTItMDQ2MC00NWY5LWIxYjctNTdiZjFlNmI2OWI4In0.GTUuNk8v1Zconz02f8DsVq4ljFnutaEzep8RoRDzi-HEvQWrKCryZMOZPz2u7Wg5moE5cldDfz0IccN9BwOjiI4GLO_OUozyqZLQnaEHF2Kd6mGJ1ip0KvvC2KImum0XPa4FxAGz5Uh7gkQ7ugax4ikCpQ3ZCDafkfDBgKiqrws_WtjCEZNw-8D_GTFJoRij6w0scS_TNzWwcwuIKiFYnMtE4FrdyfFaedajc8LYtbVOrAL1kPRRhyuoW45KWMJbSKVLxvK0JlPfZH4pL0psS06FV1S_5yzVtWfrwsKK9PTaRSUfCrspwPVTJyEq3eOvc4fUq0uli4CTB-3kJ22vOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/movie/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie By Title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/movie/search?title=Titanic",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"movie",
+								"search"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Titanic"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJKYWtvYiIsImF1ZCI6InRhcmdldFNlcnZpY2UiLCJqdGkiOiIzNDQ3N2JjNS0xMTFkLTQwYzgtOWY3MC03MmE2NzlhZDMwN2IiLCJleHAiOjE2NTU5MDc5NTQsImlhdCI6MTY1NTkwNzkyNCwic3ViIjoiSmFrb2IiLCJ1cG4iOiJKYWtvYiIsInByZWZlcnJlZF91c2VybmFtZSI6bnVsbCwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdfQ.AK8bHnzh6fls6_X2LNnxCvSjNDSK0H-7D4sq8XpacW4fHy9TfnpQ0sifE86Nf-ziJC09rH6LiF3HhM6KPB3-ZJEB5rtwHL61v3xE_RZHWYcjn3O52yEZvYXe7dZFfqEOpkmlGy5MVRZWueWZDeRlqhJfrUn_ILJfXmlo4OPYPW7dYXQhjigdkiIDgnYBgXt86-0ztMUYCEG7_i0M9dTaAg1pcjjPpRrXkCJ9_s1dQlUdiAWT3phLAvnyYwtN0A2RgccYwqBHUFJS-4MT-UlmrkVXG0M07NHQzJ1W34iSeeqf_3x5C1sloT1H_jWcldNkDsBD9MtR2q8k6WmlVeRfkw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/person",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retry Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8085/resiliance/retry",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"resiliance",
+								"retry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Timeout Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8085/resiliance/timeout",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"resiliance",
+								"timeout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8085/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Persons with Auth",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8085/auth/person",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"auth",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie with Auth",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8085/auth/movie/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"auth",
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

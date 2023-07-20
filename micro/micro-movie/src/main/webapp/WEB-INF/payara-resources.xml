@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC "-//Payara.fish//DTD Payara Server 4 Resource Definitions//EN" "https://raw.githubusercontent.com/payara/Payara-Community-Documentation/master/docs/modules/ROOT/pages/schemas/payara-resources_1_6.dtd">
+<resources>
+    <jdbc-resource pool-name="TestDb"
+                   jndi-name="java:app/TestDb"
+                   enabled="true" />
+
+    <jdbc-connection-pool datasource-classname="org.postgresql.ds.PGSimpleDataSource"
+                          name="TestDb"
+                          res-type="javax.sql.DataSource">
+        <property name="url"    value="jdbc:postgresql://postgres-micro:5432/micro-movie" />
+        <property name="User" value="jfe7727"></property>
+            <property name="Password" value="jfe7727"></property>
+            <property name="DatabaseName" value="micro-movie"></property>
+            <property name="ServerName" value="postgres-micro"></property>
+            <property name="PortNumber" value="5432"></property>
+    </jdbc-connection-pool>
+</resources>

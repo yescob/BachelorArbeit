@@ -1,0 +1,6 @@
+FROM payara/micro:5.2022.2-jdk11
+ADD docker/jaeger-tracer-lib-1.2-SNAPSHOT-jar-with-dependencies.jar ${PAYARA_HOME}/jaeger-int.jar
+ADD docker/postboot ${PAYARA_HOME}
+COPY docker/kafka-rar-0.7.0.rar $DEPLOY_DIR
+COPY ../build/libs/micro-person-1.0-SNAPSHOT.war $DEPLOY_DIR
+CMD ["--deploymentDir", "/opt/payara/deployments", "--port", "8084", "--noCluster", "--contextroot", "/", "--addlibs" , "/opt/payara/jaeger-int.jar", "--postbootcommandfile", "/opt/payara/postboot"]
